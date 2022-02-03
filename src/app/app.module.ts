@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
-import { NgBrazil } from 'ng-brazil'
-import { TextMask } from 'ng-brazil';
+import { NgBrazil, TextMask } from 'ng-brazil'
 import { CustomFormsModule } from 'ng2-validation'
 
 import { AppComponent } from './app.component';
@@ -12,8 +11,8 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { AppRoutingModule } from './app.routes';
-// import { AuthGuard } from './services/app.guard';
-// import { CadastroGuard } from './services/cadastro.guard';
+import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,8 @@ import { AppRoutingModule } from './app.routes';
     AppRoutingModule
   ],
   providers: [
-    // AuthGuard,
-    // CadastroGuard
+     AuthGuard,
+     CadastroGuard
   ],
   bootstrap: [AppComponent]
 })
