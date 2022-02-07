@@ -24,6 +24,7 @@ import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 export const BAR_PROVIDERS: Provider[] = [
   BarServices
@@ -31,7 +32,6 @@ export const BAR_PROVIDERS: Provider[] = [
 
 @NgModule({
   declarations: [
-    AppComponent,
     AppComponent,
     SobreComponent,
     CadastroComponent,
@@ -52,12 +52,13 @@ export const BAR_PROVIDERS: Provider[] = [
     BarModule.forRoot({
       unidadeId: 1000,
       unidadeToken: 'eca938c99a0e9ff91029dc'
-    })
+    }),
+    TodoModule
   ],
   providers: [
-     AuthGuard,
-     CadastroGuard,
-     //BAR_PROVIDERS
+    AuthGuard,
+    CadastroGuard,
+    //BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
